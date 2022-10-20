@@ -8,7 +8,7 @@ app = FastAPI() #object created
 handler = Mangum(app) #handler function lambda can evoke -> re-routes input to the entries @app
 #make the API generate the snippet
 
-@app.get("/generate snippet")
+@app.get("/generate_snippet")
 async def generate_snippet_api(prompt: str):
     validate_input_length(prompt)
     snippet = generate_branding_snippet(prompt)
@@ -16,7 +16,7 @@ async def generate_snippet_api(prompt: str):
 
 
 #make the snippet genrate the keyword
-@app.get("/generate keyword")
+@app.get("/generate_keyword")
 async def generate_keywords_api(prompt: str):
     validate_input_length(prompt)
     keywords = generate_keywords(prompt)
