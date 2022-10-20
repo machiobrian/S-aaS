@@ -1,10 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from copykitt import generate_branding_snippet, generate_keywords
-
+# initialize an entry point for our app
+from mangum import Mangum #wraps the entire fastAPI in a handler to be used with lambda
 MAX_INPUT_LEN = 12
 
 app = FastAPI() #object created
-
+handler = Mangum(app) #handler function lambda can evoke -> re-routes input to the entries @app
 #make the API generate the snippet
 
 @app.get("/generate snippet")
