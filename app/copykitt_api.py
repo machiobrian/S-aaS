@@ -2,11 +2,22 @@ from fastapi import FastAPI, HTTPException
 from copykitt import generate_branding_snippet, generate_keywords
 # initialize an entry point for our app
 from mangum import Mangum #wraps the entire fastAPI in a handler to be used with lambda
+from fastapi.middleware.cors import CORSMiddleware
+
 MAX_INPUT_LEN = 12
 
 app = FastAPI() #object created
 handler = Mangum(app) #handler function lambda can evoke -> re-routes input to the entries @app
 #make the API generate the snippet
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/generate snippet")
 async def generate_snippet_api(prompt: str):
