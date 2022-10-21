@@ -1,3 +1,6 @@
+// the infrastructure file will always be a go-to whenever we are doing code
+// its good practise to always manage our code-base
+
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda'
 import {Construct} from "constructs";
