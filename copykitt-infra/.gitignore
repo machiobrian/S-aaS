@@ -2,7 +2,6 @@
 !jest.config.js
 *.d.ts
 node_modules
-copykitt.py
 
 # CDK asset staging directory
 .cdk.staging
