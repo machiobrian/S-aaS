@@ -100,3 +100,5 @@ def generate_branding_snippet(prompt: str):
 
 if __name__ == "__main__":
     main()
+
+    #test done
