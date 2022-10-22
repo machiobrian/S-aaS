@@ -14,6 +14,8 @@ const CopyKitt: React.FC = () => {
     const [snippet, setSnippet] = React.useState("")
     const [keywords, setKeywords] = React.useState([]) //list or array
     const [hasResult, setHasResult] = React.useState(false)
+    // disable the button if word is still loading
+    const [isLoading, setIsLoading] = React.useState(false)
     //console.log(prompt)
 
     
@@ -22,6 +24,8 @@ const CopyKitt: React.FC = () => {
     //defined later on the button
     const onSubmit =() => {
         console.log("Submitting: "+prompt)
+        //make is Loading = True
+        setIsLoading(true)
         //calling an external API from JS/TS/React
         fetch(
             `${ENDPOINT}?prompt=${prompt}`
@@ -33,6 +37,8 @@ const CopyKitt: React.FC = () => {
         setSnippet(data.snippet)
         setKeywords(data.keywords)
         setHasResult(true)
+
+        setIsLoading(false)
         
     }
 
@@ -40,6 +46,7 @@ const CopyKitt: React.FC = () => {
     const onReset = () => {
         setPrompt("")
         setHasResult(false)
+        setIsLoading(false)
     }
 
     // console.log(snippet)
@@ -49,7 +56,13 @@ const CopyKitt: React.FC = () => {
     let displayedElemets = null
     // {snippet} -> this is a variable holder
     if(hasResult) {
-        displayedElemets = (<Results snippet={snippet} keywords={keywords} onBack={onReset} prompt={prompt}/>
+        displayedElemets = (
+            <Results 
+            snippet={snippet} 
+            keywords={keywords} 
+            onBack={onReset} 
+            prompt={prompt}
+            />
     )}
     else {    
     // const formElement = (
@@ -57,7 +70,7 @@ const CopyKitt: React.FC = () => {
         prompt={prompt} 
         setPrompt={setPrompt} 
         onSubmit={onSubmit} 
-        isLoading={false} 
+        isLoading={isLoading} 
         charLimit={CHAR_LIMIT}
         />
     //)

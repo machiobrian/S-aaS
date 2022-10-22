@@ -7,12 +7,19 @@ interface ResultsProps {
 }
 // create components
 const Results: React.FC<ResultsProps> = (props) => {
-
-    const keywordElements = []
-    for (let i=0; i < props.keywords.length; i++){
-        const element = <div key={i}>#{props.keywords[i]}</div>
-        keywordElements.push(element)
+    const keywordElements = [];
+    for (let i = 0; i < props.keywords.length; i++) {
+      const element = (
+        <div
+          key={i}
+          
+        >
+          #{props.keywords[i]}
+        </div>
+      );
+      keywordElements.push(element);
     }
+  
 
     return <>
     <div>
