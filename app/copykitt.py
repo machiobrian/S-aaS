@@ -1,11 +1,12 @@
 #create an entry pointfor the app
 # python3 <name> -i "<subject>" -> use argparse
-
+import os
 import argparse  # for input at the terminal
 import re
 from typing import List
 import openai
-MAX_INPUT_LEN = 12
+
+MAX_INPUT_LEN = 32
 
 
 def main():
@@ -27,8 +28,8 @@ def main():
         raise ValueError(f"Input length too long. Must be under {MAX_INPUT_LEN}. Submitted input is {user_input}")
 
 def generate_keywords(prompt: str) -> List[str]:
-    #load my API key manually
-    openai.api_key = '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'
+    #load my API key !manually
+    openai.api_key = os.getenv("OPEN_API_KEY")
 
     #creata a variable for {subject}
     subject = 'coffee'
@@ -67,8 +68,7 @@ def validate_len(prompt: str) -> bool: #make it return sth
 
 def generate_branding_snippet(prompt: str):
     #load my API key manually
-    openai.api_key = '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'
-
+    openai.api_key = os.getenv("OPEN_API_KEY")
     #creata a variable for {subject}
     subject = 'coffee'
     #create a variable for the prompt
