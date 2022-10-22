@@ -28,7 +28,7 @@ def main():
 
 def generate_keywords(prompt: str) -> List[str]:
     #load my API key manually
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     #creata a variable for {subject}
     subject = 'coffee'
@@ -67,7 +67,7 @@ def validate_len(prompt: str) -> bool: #make it return sth
 
 def generate_branding_snippet(prompt: str):
     #load my API key manually
-    openai.api_key = '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'
+    openai.api_key = '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'
 
     #creata a variable for {subject}
     subject = 'coffee'
