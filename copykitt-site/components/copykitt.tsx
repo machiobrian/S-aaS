@@ -79,7 +79,7 @@ const CopyKitt: React.FC = () => {
     return (
 
     <>
-        <h1>AI.Gen_TxT</h1>
+        <h1 className="text-4xl">AI.Gen_TxT</h1>
         
         {displayedElemets}
     </>
