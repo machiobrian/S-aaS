@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Marketing |AI| Branding </title>
+        <title>Artificial Intelligence | Marketing and Branding </title>
         <meta name="description" content="Generate Branding Snippets for your Products" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
