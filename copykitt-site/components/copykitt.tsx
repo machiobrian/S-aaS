@@ -84,10 +84,10 @@ const CopyKitt: React.FC = () => {
     return (
 
     <div className="h-screen flex">
-        <div className="max-w-md mx-auto my-auto p-2">
+        <div className="max-w-md m-auto p-2">
             <div className="bg-orange-700 p-6 rounded-xl text-white">
                 <div className="text-center my-8">
-                    <Image src={logo} width={800} height={600}/>
+                    <Image src={logo} width={800} height={600} alt=""/>
                     <h1 className={gradientTextStyle + " text-4xl font-medium "}>AI.Gen_TxT</h1>
                     <div className={gradientTextStyle + " font-light"}>Let's Generate Your Marketing Text </div>
                 </div>
