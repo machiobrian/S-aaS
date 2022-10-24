@@ -70,7 +70,7 @@ def generate_branding_snippet(prompt: str):
     #load my API key manually
     openai.api_key = os.getenv("OPENAI_API_KEY")
     #creata a variable for {subject}
-    subject = 'coffee'
+    subject = 'welcome'
     #create a variable for the prompt
     enriched_prompt = f'Generate Upbeat Branding Snippet for {prompt}: \n'
     print(enriched_prompt)
