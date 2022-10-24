@@ -32,7 +32,7 @@ def generate_keywords(prompt: str) -> List[str]:
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     #creata a variable for {subject}
-    subject = 'welcome'
+    subject = 'coffee'
     #create a variable for the prompt
     enriched_prompt = f'Generate related branding keywords for {prompt}:\n '
     print(enriched_prompt)

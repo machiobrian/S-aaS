@@ -1,6 +1,8 @@
 import React from "react";
 import Form from "./form";
 import Results from "./result";
+import Image from "next/image";
+import logo from "../public/vercel.svg"
 
 //make a new function extending from react
 const CopyKitt: React.FC = () => {
@@ -76,13 +78,26 @@ const CopyKitt: React.FC = () => {
     //)
     )}
 
+    const gradientTextStyle = 
+        "textwhite text-transparent bg-clip-text bg-gradient-to-r from-sky-800 to-black w-fit mx-auto"
+
     return (
 
-    <>
-        <h1 className="text-4xl">AI.Gen_TxT</h1>
-        
-        {displayedElemets}
-    </>
+    <div className="h-screen flex">
+        <div className="max-w-md mx-auto my-auto p-2">
+            <div className="bg-orange-700 p-6 rounded-xl text-white">
+                <div className="text-center my-8">
+                    <Image src={logo} width={800} height={600}/>
+                    <h1 className={gradientTextStyle + " text-4xl font-medium "}>AI.Gen_TxT</h1>
+                    <div className={gradientTextStyle + " font-light"}>Let's Generate Your Marketing Text </div>
+                </div>
+                       
+                {displayedElemets}
+            </div>
+        </div>
+
+       
+    </div>
     )
 };
 
