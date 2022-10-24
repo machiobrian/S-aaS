@@ -16,7 +16,7 @@ const Results: React.FC<ResultsProps> = (props) => {
       {props.keywords[i]}</div>
       keywordElements.push(element)
     }
-    const keywordElementsholder = <div className="flex-wrap gap-3">{keywordElements}</div>
+    const keywordElementsholder = <div className="flex-wrap">{keywordElements}</div>
     
     const resultSection = (label:string, body:any) => {
     return (
@@ -24,7 +24,7 @@ const Results: React.FC<ResultsProps> = (props) => {
             <div className="mb-6 font-light text-red-50 text-sm">
                 {label}
             </div>
-            <div className="font-bold text-emerald-50 mb-5">{body}</div>
+            <div className="font-bold text-emerald-50">{body}</div>
         </div>
     )
 
