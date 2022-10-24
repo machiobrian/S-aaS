@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./form";
 import Results from "./result";
 import Image from "next/image";
-import logo from "../public/vercel.svg"
+import logo from "/home/ix502iv/Documents/SaaS/first_saas/copykitt-site/public/vercel.svg"
 
 //make a new function extending from react
 const CopyKitt: React.FC = () => {
